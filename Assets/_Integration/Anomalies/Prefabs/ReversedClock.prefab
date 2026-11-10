@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3759119802633385374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5091721641391399167}
+  - component: {fileID: 9085553159389082031}
+  - component: {fileID: 7321012260503759}
+  - component: {fileID: 3712677698587711076}
+  - component: {fileID: 7893828213810585321}
+  m_Layer: 0
+  m_Name: ReversedClock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5091721641391399167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759119802633385374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6122492089680004361}
+  - {fileID: 4877245403285521139}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9085553159389082031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759119802633385374}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1, y: 2.1, z: 0.7}
+  m_Center: {x: 0, y: 0, z: -0.1}
+--- !u!114 &7321012260503759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759119802633385374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3dcbb3cf8493d449bfb9a844b5e613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.ReversedClockAnomaly
+  hourHand: {fileID: 0}
+  minuteHand: {fileID: 0}
+  secondHand: {fileID: 4877245403285521139}
+  rotationAxis: {x: 0, y: 0, z: 1}
+  rotationPivot: {fileID: 5091721641391399167}
+  secondHandDegPerSec: 30
+  hangUpsideDown: 0
+  clockBody: {fileID: 6122492089680004361}
+  upsideDownAxis: {x: 0, y: 0, z: 1}
+  scaleSpeedByDissociation: 1
+  accelerateWhenLowSanity: 1
+--- !u!114 &3712677698587711076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759119802633385374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84591331d6a4c638c6a287e7c34aa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.AnomalyThreat
+  baseSanityDrainPerSecond: 1.5
+  threatRange: 8
+  requireLineOfSight: 0
+  sightObstacleMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  difficulty: 1
+  startActive: 1
+  disableSiblingsWhenDormant: 1
+  disableOnNeutralize: []
+  autoControlSiblingBehaviours: 1
+  OnActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDormant:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNeutralized:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7893828213810585321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759119802633385374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0694244ea924ca5a302219605c9c4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.AnomalyPurifiable
+  requiredPurifyTime: 5
+  currentPurifyTime: 0
+  isPurified: 0
+  effectPoint: {fileID: 0}
+  purifyingEffectPrefab: {fileID: 0}
+  successEffectPrefab: {fileID: 0}
+  effectSpawnPoint: {fileID: 0}
+  purifyingAudioSource: {fileID: 0}
+  sanityRewardOnComplete: 25
+  scaleRewardByEfficiency: 1
+  reduceDissociationOnComplete: 0
+  dissociationReduceAmount: 1
+  OnAnomalyPurified:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1001 &4910557090147263768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5091721641391399167}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db99c1134741faf408954fe08886799b, type: 3}
+      propertyPath: m_Name
+      value: Horror Clock Hands Unity
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db99c1134741faf408954fe08886799b, type: 3}
+--- !u!4 &4877245403285521139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db99c1134741faf408954fe08886799b, type: 3}
+  m_PrefabInstance: {fileID: 4910557090147263768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6016192703480029922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5091721641391399167}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+      propertyPath: m_Name
+      value: Horror School Wall Clock Unity
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+--- !u!4 &6122492089680004361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce9af65201bb5f9429f46a4b2c8ac23e, type: 3}
+  m_PrefabInstance: {fileID: 6016192703480029922}
+  m_PrefabAsset: {fileID: 0}

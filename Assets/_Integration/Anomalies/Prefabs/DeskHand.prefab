@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5021601439156351127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2162004149386043657}
+  - component: {fileID: 7537843232702946423}
+  - component: {fileID: 4077131429748397149}
+  - component: {fileID: 4212336407866961528}
+  - component: {fileID: 4493163773490748943}
+  m_Layer: 0
+  m_Name: DeskHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2162004149386043657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021601439156351127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7006648459640163697}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7537843232702946423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021601439156351127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dae1fd989b65045bc8aced8673cf75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.DeskHandAnomaly
+  hand: {fileID: 7006648459640163697}
+  fingers: []
+  crawlDirectionLocal: {x: 0, y: 0, z: 1}
+  crawlSpeed: 0.25
+  maxCrawlDistance: 1.2
+  freezeWhenObserved: 1
+  tapAmplitudeDeg: 18
+  tapSpeed: 6
+  tapAxis: {x: 1, y: 0, z: 0}
+  observeConeDeg: 35
+  observeMaxDistance: 14
+  tapAudio: {fileID: 0}
+--- !u!114 &4077131429748397149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021601439156351127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84591331d6a4c638c6a287e7c34aa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.AnomalyThreat
+  baseSanityDrainPerSecond: 1.5
+  threatRange: 8
+  requireLineOfSight: 0
+  sightObstacleMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  difficulty: 2
+  startActive: 1
+  disableSiblingsWhenDormant: 1
+  disableOnNeutralize: []
+  autoControlSiblingBehaviours: 1
+  OnActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDormant:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNeutralized:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4212336407866961528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021601439156351127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0694244ea924ca5a302219605c9c4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LucidDream.Integration.AnomalyPurifiable
+  requiredPurifyTime: 5
+  currentPurifyTime: 0
+  isPurified: 0
+  effectPoint: {fileID: 0}
+  purifyingEffectPrefab: {fileID: 0}
+  successEffectPrefab: {fileID: 0}
+  effectSpawnPoint: {fileID: 0}
+  purifyingAudioSource: {fileID: 0}
+  sanityRewardOnComplete: 35
+  scaleRewardByEfficiency: 1
+  reduceDissociationOnComplete: 1
+  dissociationReduceAmount: 1
+  hideOnComplete: 1
+  hideDelay: 0.3
+  OnAnomalyPurified:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &4493163773490748943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021601439156351127}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6334043, y: 0.94403756, z: 2.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &7401143564008073882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2162004149386043657}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+      propertyPath: m_Name
+      value: Severed Horror Hand Unity
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+--- !u!4 &7006648459640163697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c001609c06d08a64ebccd5213e051dbf, type: 3}
+  m_PrefabInstance: {fileID: 7401143564008073882}
+  m_PrefabAsset: {fileID: 0}
